@@ -2,6 +2,7 @@ const path=require('path');
 const express=require('express');
 const hbs=require('hbs');
 const app=express();
+const port =process.env.PORT || 3000;
 
 const publicDirPath=path.join(__dirname,'../public');
 const layoutDirPaths=path.join(__dirname,'../views/layouts');
@@ -33,6 +34,6 @@ app.get('/weather',(req, res) =>{
     });
 });
 
-app.listen(3000, () => {
-console.log('Server is up on port 3000');
+app.listen(port, () => {
+console.log('Server is up on port '+port);
 });
